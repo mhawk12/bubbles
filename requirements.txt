@@ -1,0 +1,24 @@
+What all I need: 
+Functional requirements:
+First tab
+Should be able to add blocks
+Should be able to edit blocks
+Should have an + bubbles which sorts it according to the number of +s it has.
+Second tab //Not sure about this, right now.
+7 rows for 7 days : this should get randomized every 7th day.
+Each row will detail what all needs to be eaten today.
+What needs to done while Exercising.
+
+Non Functional requirements:
+
+Implementation Details:
+Add button
+Edit button
+Save button
+when a card gets clicked flip it to show story.
++ button
+
+Technologies I am going to use:
+
+Considerations and Compromises:
+

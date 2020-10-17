@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.STORE = exports.DELETE = exports.ADD = exports.SET = exports.GET = exports.BUBBLE_TEXTS = exports.BUBBLE_COLORS = void 0;
+exports.BUBBLE_COLORS = "BUBBLE_COLORS";
+exports.BUBBLE_TEXTS = "BUBBLE_TEXTS";
+exports.GET = "GET";
+exports.SET = "SET";
+exports.ADD = "ADD";
+exports.DELETE = "DELETE";
+exports.STORE = "STORE";

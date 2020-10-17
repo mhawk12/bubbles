@@ -1,0 +1,40 @@
+@import '../abstracts/variables';
+
+.bubble {
+    display: grid;
+    grid-template-rows: [row1]90% [row2]10%;
+    grid-template-columns: [col1] 100%;
+    grid-template-areas: "bubble-text" "delete";
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: center;
+    align-items: center;
+    padding: 2%;
+    border: $border;
+    background-color: transparent;
+}
+
+.bubble{
+    &__text {
+        grid-area: bubble-text;
+        display: flex;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.bubble{
+    &__delete-btn {
+        grid-area: delete;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: stretch;
+        justify-items: stretch;
+        align-content: flex-start;
+        align-items: center;
+    }
+}

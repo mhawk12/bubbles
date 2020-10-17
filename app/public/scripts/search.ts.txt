@@ -1,0 +1,33 @@
+export default class Search {
+
+    private searchText: string;
+    private searchElement: any;
+
+    constructor(searchText: string){
+        this.searchText = searchText;
+        this.searchElement = document.getElementById("search");
+    }
+
+    public expose(): Search{
+        return this;
+    }
+
+    public setSearchText(searchText: string): void{
+        this.searchText = this.searchElement.firstElementChild.value;
+    }
+
+    public getSearchText(): string{
+        return this.searchElement.firstElementChild.value;
+    }
+
+    public getSearchElement(): HTMLElement {
+        return this.searchElement;
+    }
+
+    public addSearchBar(): void{
+        const textInputElement = document.createElement("input");
+        textInputElement.setAttribute("type", "text");
+        this.searchElement.appendChild(textInputElement);
+    }
+
+}
