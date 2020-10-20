@@ -1,10 +1,7 @@
 node_modules
 inspiration.png
 why.txt
-dist/mac
-dist/bubbles*
-dist/builder*
-dist/latest*
+build
 data.json
 bubbles*
 download.png

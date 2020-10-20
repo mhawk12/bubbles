@@ -23,6 +23,9 @@
   "build": {
     "appId": "com.ns.bubbles",
     "extends": null,
+    "directories":{
+       "output": "build"
+    },
     "mac": {
       "category": "com.ns.productivity.bubbles"
     },
