@@ -6,3 +6,6 @@ dist/bubbles*
 dist/builder*
 dist/latest*
 data.json
+bubbles*
+download.png
+icon.icns

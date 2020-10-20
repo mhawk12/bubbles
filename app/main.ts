@@ -11,7 +11,7 @@ export default class Main {
       minHeight: 650,
       minimizable: false,
       maximizable: false,
-      resizable: false,
+      // resizable: false,
       // frame: false,
       webPreferences: {
         nodeIntegration: true,
