@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import { app, BrowserWindow, ipcMain, IpcMainEvent } from "electron";
 import path from "path";
 import { GET, ADD, DELETE, STORE } from "./globals/globals";
 import Store from "./services/store";
@@ -15,6 +15,7 @@ export default class Main {
       // frame: false,
       webPreferences: {
         nodeIntegration: true,
+        contextIsolation: false,
         webSecurity: false,
       },
     });
@@ -22,7 +23,7 @@ export default class Main {
     const mainURL = "file://" + path.join(__dirname, "./public/index.html");
     (async () => mainWindow.loadURL(mainURL))();
 
-    ipcMain.on(STORE, (event: Event, message: string[]) => {
+    ipcMain.on(STORE, (_event: IpcMainEvent, message: string[]) => {
       const operation = message[0];
       const key = message[1];
       const value = message[2];
@@ -51,7 +52,7 @@ export default class Main {
       store.set();
     });
 
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
   }
 
   public start(): void {

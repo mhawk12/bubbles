@@ -4,6 +4,7 @@ import Store from "./store";
 import Add from "./add";
 import Modal from "./modal";
 import { ipcRenderer } from "electron";
+import { IpcRendererEvent } from "electron";
 import {
   BUBBLE_COLORS,
   BUBBLE_TEXTS,
@@ -45,16 +46,19 @@ class Index {
     index.add.addButton();
     ipcRenderer.send(STORE, [GET, BUBBLE_COLORS, ""]);
     ipcRenderer.send(STORE, [GET, BUBBLE_TEXTS, ""]);
-    ipcRenderer.on(STORE, (event: Event, type: string, data: string[]) => {
-      switch (type) {
-        case BUBBLE_COLORS:
-          index.bubbles.setBubbleColors(data);
-          break;
-        case BUBBLE_TEXTS:
-          index.bubbles.setBubblesText(data);
-          break;
+    ipcRenderer.on(
+      STORE,
+      (event: IpcRendererEvent, type: string, data: string[]) => {
+        switch (type) {
+          case BUBBLE_COLORS:
+            index.bubbles.setBubbleColors(data);
+            break;
+          case BUBBLE_TEXTS:
+            index.bubbles.setBubblesText(data);
+            break;
+        }
       }
-    });
+    );
   }
 }
 
