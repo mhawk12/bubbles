@@ -1,4 +1,4 @@
-import { app, remote } from "electron";
+import { app } from "electron";
 import path from "path";
 import fs from "fs";
 
@@ -20,7 +20,7 @@ export default class Store {
       ],
       BUBBLE_TEXTS: ["ADD NOTES!!!"],
     };
-    this.userDataPath = (app || remote.app).getPath("userData");
+    this.userDataPath = app.getPath("userData");
     this.path = path.join(this.userDataPath, "data.json");
     this.data = this.parseDataFile(this.path);
   }
